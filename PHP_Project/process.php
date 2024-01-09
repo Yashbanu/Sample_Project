@@ -23,7 +23,7 @@ if(count($errors)>0){
     if($pdoexe){
         echo "<h1>You are registered.....!!!!</h1>";
     }else{
-        echo "<h1>Something went wrong.......!!!!1</h1>";
+        echo "<h1>Something went wrong.....!!!!1</h1>";
     }
     
     
