@@ -11,6 +11,23 @@ $errors=array();
 if(empty($id) OR empty($name) OR empty($category) OR empty($price) OR empty(($quantity))){
     array_push($errors,"All fields are required");
 }
+if (!preg_match ("/^[0-9]*$/", $id) ){  
+    array_push($errors,"ID should be a number");
+} 
+if (!preg_match ("/^[a-zA-z]*$/", $category) ) {  
+    array_push($errors,"category of the product should be a String");
+}
+if (!preg_match ("/^[0-9]*$/", $price) ){  
+    array_push($errors,"Price should be a number");
+} 
+if (!preg_match ("/^[0-9]*$/", $quantity) ){  
+    array_push($errors,"quantity should be a number");
+} 
+if( strlen((string)abs($price))<0 || strlen((string)abs($quantity))<0){
+    array_push($errors,"Price and Quamtity should be greater than 0");
+}
+
+
 if(count($errors)>0){
     foreach($errors as $error){
         echo "$error";
