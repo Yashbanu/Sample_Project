@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title><E-Commerce></E-Commerse></title>
+    <script>
+        function insert(){
+            var obj1=new XMLHttpRequest();
+            obj1.onreadystatechange=function(){
+                if(obj1.readyState==4 && obj1.status==200){
+                    var redirect="bas.html";
+                    window.location.href=redirect;
+                }
+            };
+            obj1.open("GET","bas.html",true);
+            obj1.send();
+        }
+        function displayall(){
+            var obj2=new XMLHttpRequest();
+            obj2.onreadystatechange=function(){
+                if(obj2.readyState==4 && obj2.status==200){
+                    var redirect="displayall.php";
+                    window.location.href=redirect;
+                }
+            };
+            obj2.open("GET","displayall.php",true);
+            obj2.send();
+        }
+        function displayone(){
+            var obj3=new XMLHttpRequest();
+            obj3.onreadystatechange=function(){
+                if(obj3.readyState==4 && obj3.status==200){
+                    var redirect="displayone.php";
+                    window.location.href=redirect;
+                }
+            };
+            obj3.open("GET","displayone.php",true);
+            obj3.send();
+        }
+        function deletes(){
+            var obj5=new XMLHttpRequest();
+            obj5.onreadystatechange=function(){
+                if(obj5.readyState==4 && obj5.status==200){
+                    var redirect="delete.php";
+                    window.location.href=redirect;
+                }
+            };
+            obj5.open("GET","delete.php",true);
+            obj5.send();
+        }
+
+    </script>
+    <style>
+        table{
+           margin-left: 50%;
+           margin-top: 100px;
+          
+        }
+        button{
+            padding: 20px;
+            width: 200px;
+            margin: 20px;
+            border:solid;
+        }
+                </style>
+</head>
+<body>
+    <h1>E-commerse</h1>
+     <table border="2px">
+        <tr>
+            <th><button onclick="insert()">INSERT DATA</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="displayall()">DISPLAY ALL</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="displayone()">DISPLAY ONE</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="deletes()">DELETE</button></th>
+        </tr>
+     </table>
+</body>
+</html>
